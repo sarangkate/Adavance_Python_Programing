@@ -26,11 +26,8 @@ This repository contains my **Advanced Python Programming** assignments, practic
 ```
 Advance-Python-Programming/
 │
-├── Assignment-1/
-├── Assignment-2/
-├── Assignment-3/
-├── Mini-Projects/
-├── Notes/
+├── Hospital_management/
+├── movie_collection/
 └── README.md
 ```
 
