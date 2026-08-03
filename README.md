@@ -23,14 +23,13 @@ This repository contains my **Advanced Python Programming** assignments, practic
 
 ## 📂 Repository Structure
 
-```
+```text
 Advance-Python-Programming/
 │
-├── Hospital_management
-├── movie_collection
+├── Hospital_management.py
+├── movie_collection.py
 └── README.md
 ```
-
 ---
 
 ## 🛠️ Technologies Used
