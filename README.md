@@ -4,7 +4,7 @@ This repository contains my **Advanced Python Programming** assignments, practic
 
 ---
 
-## 📚 Topics Covered
+## 📚 Topics will be Covered
 
 - Object-Oriented Programming (OOP)
 - Classes & Objects
