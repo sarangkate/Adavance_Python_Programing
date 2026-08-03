@@ -26,8 +26,8 @@ This repository contains my **Advanced Python Programming** assignments, practic
 ```
 Advance-Python-Programming/
 │
-├── Hospital_management/
-├── movie_collection/
+├── Hospital_management
+├── movie_collection
 └── README.md
 ```
 
