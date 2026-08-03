@@ -44,19 +44,6 @@ Advance-Python-Programming/
 
 ---
 
-## 📖 Sample Projects
-
-- Hospital Patient Management System
-- Movie Collection Management System
-- Library Book Management System
-- Mobile Store Management System
-- Vehicle Showroom Management System
-- Product Inventory System
-- Course Management System
-- Cricket Team Management System
-
----
-
 ## 🎯 Objectives
 
 - Strengthen Python programming skills
@@ -66,25 +53,6 @@ Advance-Python-Programming/
 
 ---
 
-## 🚀 How to Run
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/Advance-Python-Programming.git
-```
-
-2. Navigate to the project folder
-
-```bash
-cd Advance-Python-Programming
-```
-
-3. Run any Python program
-
-```bash
-python filename.py
-```
 
 ---
 
