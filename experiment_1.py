@@ -9,7 +9,6 @@ class Patron:
     def __init__(self, patron_id, name):
         self.patron_id = patron_id
         self.name = name
-        self.borrowed = []
 
 
 class Library:
@@ -17,56 +16,88 @@ class Library:
         self.books = []
         self.patrons = []
 
-    def add_book(self, book):
+    def add_book(self):
+        book_id = int(input("Enter Book ID: "))
+        title = input("Enter Book Title: ")
+
+        book = Book(book_id, title)
         self.books.append(book)
 
-    def add_patron(self, patron):
+        print("Book added successfully.")
+
+    def register_patron(self):
+        patron_id = int(input("Enter Patron ID: "))
+        name = input("Enter Patron Name: ")
+
+        patron = Patron(patron_id, name)
         self.patrons.append(patron)
 
-    def borrow_book(self, patron_id, book_id):
-        for p in self.patrons:
-            if p.patron_id == patron_id:
-                for b in self.books:
-                    if b.book_id == book_id and b.available:
-                        b.available = False
-                        p.borrowed.append(b.title)
-                        print(p.name, "borrowed", b.title)
-                        return
-        print("Book not available")
+        print("Patron registered successfully.")
 
-    def return_book(self, patron_id, book_id):
-        for p in self.patrons:
-            if p.patron_id == patron_id:
-                for b in self.books:
-                    if b.book_id == book_id and b.title in p.borrowed:
-                        b.available = True
-                        p.borrowed.remove(b.title)
-                        print(p.name, "returned", b.title)
-                        return
-        print("Book not found")
+    def borrow_book(self):
+        book_id = int(input("Enter Book ID: "))
+        patron_id = int(input("Enter Patron ID: "))
 
-    def show_books(self):
-        for b in self.books:
-            if b.available:
-                print(b.book_id, b.title, "- Available")
-            else:
-                print(b.book_id, b.title, "- Borrowed")
+        for book in self.books:
+            if book.book_id == book_id:
+                if book.available:
+                    book.available = False
+                    print("Book borrowed successfully.")
+                else:
+                    print("Book is already borrowed.")
+                return
 
+        print("Book not found.")
+
+    def return_book(self):
+        book_id = int(input("Enter Book ID: "))
+
+        for book in self.books:
+            if book.book_id == book_id:
+                book.available = True
+                print("Book returned successfully.")
+                return
+
+        print("Book not found.")
+
+    def display_books(self):
+        print("\nBooks in Library:")
+
+        for book in self.books:
+            status = "Available" if book.available else "Borrowed"
+            print(book.book_id, "-", book.title, "-", status)
 
 library = Library()
 
-library.add_book(Book(1, "Python"))
-library.add_book(Book(2, "Java"))
+while True:
+    print("\n===== Library Management System =====")
+    print("1. Add Book")
+    print("2. Register Patron")
+    print("3. Borrow Book")
+    print("4. Return Book")
+    print("5. Display Books")
+    print("6. Exit")
 
-library.add_patron(Patron(101, "Shreya"))
-library.add_patron(Patron(102, "Rahul"))
+    choice = int(input("Enter your choice: "))
 
-library.show_books()
+    if choice == 1:
+        library.add_book()
 
-library.borrow_book(101, 1)
+    elif choice == 2:
+        library.register_patron()
 
-library.show_books()
+    elif choice == 3:
+        library.borrow_book()
 
-library.return_book(101, 1)
+    elif choice == 4:
+        library.return_book()
 
-library.show_books()
+    elif choice == 5:
+        library.display_books()
+
+    elif choice == 6:
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid choice.")
