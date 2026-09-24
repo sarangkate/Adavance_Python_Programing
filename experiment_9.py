@@ -7,7 +7,7 @@ writer = csv.writer(file)
 writer.writerow(["Roll_No","Name", "Marks"])
 writer.writerow([1,"Sarang", "90"])
 writer.writerow([2,"Saish", "95"])
-writer.writerow([3,"Sarang", "90"])
+writer.writerow([3,"Tejas", "85"])
 
 file.close()
 
